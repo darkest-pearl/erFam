@@ -3,8 +3,11 @@
 - Evidence ID: `ERFAM-GE-2026-002`
 - Repository: `darkest-pearl/erFam`
 - Verification date: 2026-07-25
-- Candidate commit: pending
-- GitHub Actions run: pending
+- Candidate baseline commit:
+  `aa1206da15ba757e19d841c3ee3c402de0ed9f6a`
+- GitHub Actions run:
+  `https://github.com/darkest-pearl/erFam/actions/runs/30126974919`
+- CI conclusion: `success`
 - Independent alpha verdict: `BLOCK` pending corrections and exact-SHA CI
 - Result: `PENDING`
 
@@ -20,9 +23,9 @@ Verified controls:
   updates, and private vulnerability reporting;
 - successful bootstrap workflow on commit `8048342`.
 
-The cited bootstrap run predates this candidate policy. It proves only the
-original bootstrap; it does not close this gate. A new exact-SHA run is
-required.
+The earlier bootstrap run on `8048342` predates this policy. The candidate
+baseline itself passed the strict `verify` workflow on the full SHA recorded
+above.
 
 Independent repository scans found no credentials, production phone numbers,
 SIM identifiers, call records, recordings, embedded DOCX objects, tracked

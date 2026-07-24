@@ -1,6 +1,6 @@
 # erFam build-track threat model
 
-Status: candidate baseline pending exact-SHA CI and independent alpha approval  
+Status: accepted build-track baseline  
 Scope: Android member app, administrator web app, control service, media
 control, home-edge service, virtual gateway, and the locked real adapter
 

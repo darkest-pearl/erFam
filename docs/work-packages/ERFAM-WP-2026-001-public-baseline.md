@@ -1,6 +1,6 @@
 # ERFAM-WP-2026-001 — Public governance and security baseline
 
-- Status: pending exact-SHA CI and independent alpha approval
+- Status: complete
 - Owner: lead integrator
 - Reviewer: security architecture agents
 - Alpha reviewer: `gpt-5.6-sol`
@@ -27,5 +27,4 @@ Build track B1–B6 only. Real outbound traffic and credentials are prohibited.
 
 ## Evidence
 
-See `docs/evidence/ERFAM-GE-2026-002-public-remote.md`. It remains pending
-until the candidate baseline commit and its CI run are recorded.
+See `docs/evidence/ERFAM-GE-2026-002-public-remote.md`.

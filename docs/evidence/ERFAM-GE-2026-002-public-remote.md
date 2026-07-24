@@ -8,8 +8,8 @@
 - GitHub Actions run:
   `https://github.com/darkest-pearl/erFam/actions/runs/30126974919`
 - CI conclusion: `success`
-- Independent alpha verdict: `BLOCK` pending corrections and exact-SHA CI
-- Result: `PENDING`
+- Independent alpha verdict: `APPROVE`
+- Result: `PASS`
 
 Verified controls:
 
@@ -33,3 +33,19 @@ changes, macros, or personal document metadata.
 
 Known and accepted limitation: public copies already downloaded cannot be
 recalled by a later visibility change.
+
+## Independent alpha verdict
+
+`APPROVE`. A-001 is closed as an explicitly accepted and bounded
+public-disclosure risk; A-002 is closed through actionable `SECURITY.md`
+guidance and enabled GitHub private vulnerability reporting. Candidate baseline
+`aa1206da15ba757e19d841c3ee3c402de0ed9f6a` passed run `30126974919`, and
+evidence commit `4b33d8dc2b36ad04be1b7961d9a01352784eb72b` passed run
+`30127023027`.
+
+Live GitHub settings independently confirmed administrator-enforced branch
+protection, strict `verify`, two approvals, CODEOWNERS review, stale/last-push
+controls, resolved conversations, linear history, and force-push/deletion
+blocking. TM-11 covers repository-administrator and supply-chain compromise.
+ERFAM-WP-2026-001 is complete and the P1 public-baseline gate is closed for
+build-track work; L0–L4 remain separate authorization gates.

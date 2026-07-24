@@ -1,6 +1,6 @@
 # Remote repository setup gate
 
-Status: **PENDING EXACT-SHA CI AND ALPHA VERDICT**
+Status: **CLOSED — VERIFIED**
 
 Verified on 2026-07-25 against
 [`darkest-pearl/erFam`](https://github.com/darkest-pearl/erFam).
@@ -24,5 +24,5 @@ engineering evidence but do not impersonate GitHub reviewers.
 The public-repository exposure and its limitations are accepted in
 `docs/governance/public-repository-policy.md`.
 
-This gate closes only after these files are committed, `verify` succeeds on
-that exact SHA, and the independent alpha reviewer approves the evidence.
+The candidate baseline and its evidence commit both passed `verify` on their
+exact SHAs, and an independent `gpt-5.6-sol` alpha reviewer approved closure.

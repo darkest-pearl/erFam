@@ -1,17 +1,28 @@
 # Remote repository setup gate
 
-The GitHub remote is not yet available. Before feature branches or parallel
-agent pull requests begin, the owner must verify and record:
+Status: **PENDING EXACT-SHA CI AND ALPHA VERDICT**
 
-- the repository is private and owned by `darkest-pearl`;
-- `main` is protected from force pushes and deletion;
-- changes require pull requests and the quality workflow;
-- code-owner review is required for governed paths;
-- gate-sensitive changes require two independent approvals;
-- dismissal of stale approvals is enabled;
-- conversations must be resolved before merge;
-- secret scanning and push protection are enabled when available;
-- the social-preview image and repository visibility are correct.
+Verified on 2026-07-25 against
+[`darkest-pearl/erFam`](https://github.com/darkest-pearl/erFam).
 
-Until this gate is evidenced, the local bootstrap commit may be prepared, but
-feature implementation must not begin.
+- Repository visibility is public by the owner's explicit decision.
+- Protected `main`, including administrators, prevents force pushes and
+  deletion and requires linear history.
+- Pull requests, including administrator changes, require the `verify` check,
+  resolved conversations, dismissal
+  of stale approvals, approval of the most recent push, and two approvals.
+- Governed paths use `CODEOWNERS`.
+- Secret scanning, push protection, Dependabot security updates, vulnerability
+  alerts, and private vulnerability reporting are enabled.
+- Squash is the only enabled merge strategy; merged branches are deleted.
+- The social preview and public-disclosure policy are recorded.
+
+No administrator bypass is configured. Two independent GitHub approvals are
+therefore required before merge; agent alpha verdicts provide additional
+engineering evidence but do not impersonate GitHub reviewers.
+
+The public-repository exposure and its limitations are accepted in
+`docs/governance/public-repository-policy.md`.
+
+This gate closes only after these files are committed, `verify` succeeds on
+that exact SHA, and the independent alpha reviewer approves the evidence.

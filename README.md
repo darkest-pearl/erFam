@@ -1,15 +1,16 @@
 # erFam
 
-erFam is a private, configurable family-calling platform designed for a small
-trusted group. The first release targets Android members, a responsive web
-admin console, cloud control services, and one controlled home-edge gateway.
+erFam is a configurable, invite-only family-calling platform designed for a
+small trusted group. The source repository is intentionally public; deployed
+groups and their identity, destination, carrier, and calling data remain
+private. The first release targets Android members, a responsive web admin
+console, cloud control services, and one controlled home-edge gateway.
 
 ## Current status
 
-This repository is in **B1 — repository and governance bootstrap**. Product
-implementation is intentionally locked until the approved requirements,
-architecture, semantic catalogue, and security boundaries are represented as
-testable contracts.
+This repository is entering **B2/B3 — executable contracts and architecture
+spikes**. The approved requirements and security boundaries are being turned
+into a simulator-first, production-shaped vertical product.
 
 The real SIM/PSTN adapter is a required product component, not an abandoned
 prototype. It must be implemented and tested against a simulated or isolated
@@ -61,3 +62,7 @@ satisfied.
 
 Run `scripts/verify-bootstrap.sh` to validate the bootstrap structure and the
 approved-document checksums.
+
+The build-track product never places a real phone call. The simulator is the
+only usable route; the real adapter remains implemented but locked and dry-run
+only until separate carrier and live-track gates are approved.

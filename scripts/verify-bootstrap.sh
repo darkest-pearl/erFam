@@ -15,6 +15,9 @@ required_files=(
   "docs/branding/erFam_social_preview.png"
   "docs/evidence/baselines.sha256"
   "docs/evidence/ERFAM-AR-2026-001-bootstrap.md"
+  "docs/evidence/ERFAM-GE-2026-002-public-remote.md"
+  "docs/governance/public-repository-policy.md"
+  "docs/security/threat-model.md"
   "contracts/governance-policy.json"
   "docs/templates/agent-work-package.md"
   "docs/templates/alpha-verdict.md"
@@ -91,5 +94,7 @@ assert policy["semantics"]["money"] == {
     "storage": "integer_fils",
 }
 PY
+
+./scripts/verify-public-safety.sh
 
 echo "erFam bootstrap verification passed."

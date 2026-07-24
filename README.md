@@ -42,12 +42,16 @@ satisfied.
 - A displayed balance can never imply callable time below zero.
 - Allocation and ledger changes are atomic, idempotent, auditable, and
   reversible through compensating entries.
-- Full destination numbers are encrypted at rest and masked outside the caller
-  and authorized administrator views.
+- Full destination numbers are encrypted at rest and masked by default. A
+  caller may reveal their own number; an authorized administrator needs fresh
+  step-up authentication, a mandatory reason, and an attributable audit event.
 - DTMF, OTPs, access tokens, credentials, raw media, and plaintext destination
   numbers never enter logs or telemetry.
 - The demo route is the default. Live carrier activation is a separate,
   fail-closed operational decision.
+- Build-track work uses demo, simulated, or isolated routes. Any controlled
+  live-track test requires the prior gate's explicit approval and recorded
+  scope; unrestricted production traffic requires L4 approval.
 
 ## Approved source documents
 

@@ -1,0 +1,76 @@
+{
+  "build_track": {
+    "allowed_routes": [
+      "demo",
+      "simulated",
+      "isolated"
+    ],
+    "live_credentials_allowed": false,
+    "real_outbound_traffic_allowed": false
+  },
+  "live_track": {
+    "default_enabled": false,
+    "stages": [
+      {
+        "evidence_required": true,
+        "id": "L0",
+        "name": "carrier_authorization",
+        "prior_approval_required": true,
+        "rollback_required": true,
+        "traffic_scope": "none"
+      },
+      {
+        "evidence_required": true,
+        "id": "L1",
+        "name": "isolated_hardware_validation",
+        "prior_approval_required": true,
+        "rollback_required": true,
+        "traffic_scope": "controlled_isolated_test"
+      },
+      {
+        "evidence_required": true,
+        "id": "L2",
+        "name": "scoped_verification",
+        "prior_approval_required": true,
+        "rollback_required": true,
+        "traffic_scope": "approved_test_calls"
+      },
+      {
+        "evidence_required": true,
+        "id": "L3",
+        "name": "limited_alpha",
+        "prior_approval_required": true,
+        "rollback_required": true,
+        "traffic_scope": "approved_limited_group"
+      },
+      {
+        "evidence_required": true,
+        "id": "L4",
+        "name": "production_activation",
+        "prior_approval_required": true,
+        "rollback_required": true,
+        "traffic_scope": "approved_production"
+      }
+    ],
+    "unrestricted_production_requires": "L4"
+  },
+  "privacy": {
+    "administrator_destination_reveal": {
+      "attributable_audit_event_required": true,
+      "fresh_step_up_required": true,
+      "mandatory_reason_required": true,
+      "masked_by_default": true
+    }
+  },
+  "schema_version": 1,
+  "semantics": {
+    "duration": {
+      "allow_negative": false,
+      "storage": "integer_seconds"
+    },
+    "money": {
+      "allow_floating_point": false,
+      "storage": "integer_fils"
+    }
+  }
+}

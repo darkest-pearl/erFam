@@ -38,16 +38,23 @@ record `DECISION_REQUIRED`; do not silently invent behavior.
 - Unsupported gateway telemetry is represented as `UNKNOWN` or `UNSUPPORTED`;
   it is never fabricated.
 - Live carrier credentials, SIM routing, and real outbound traffic are
-  prohibited until gates L0–L4 are explicitly approved and evidenced.
+  prohibited on the build track. The live track may use only the minimum
+  controlled traffic explicitly authorized by its current gate: L0 carrier
+  authorization, L1 isolated hardware validation, L2 scoped verification
+  calls, L3 limited alpha, and L4 production activation.
+- Each live-track stage requires prior approval, recorded scope, evidence, and a
+  tested rollback. Unrestricted production traffic is prohibited before L4.
 - The live route remains disabled after implementation unless an authorized,
-  audited activation changes it.
+  audited activation changes it within the approved stage.
 
 ## Privacy and security
 
 - Never log plaintext destination numbers, DTMF, OTPs, access tokens,
   credentials, encryption keys, or raw media.
-- Encrypt full destination numbers at rest; mask them except for the caller and
-  an authorized administrator.
+- Encrypt full destination numbers at rest and mask them by default. A caller
+  may reveal their own destination. An authorized administrator reveal requires
+  fresh step-up authentication, a mandatory reason, and an attributable audit
+  event.
 - Call recording is opt-in, locally stored on the member device, and unavailable
   to administrators or cloud services.
 - Default destination retention is four months and must be configurable.
@@ -75,6 +82,7 @@ without coordination. Prefer small, reviewable commits with tests and evidence.
   wide coherence; agent output is never merged blindly.
 - A `gpt-5.6-sol` alpha reviewer independently reviews cross-component
   semantics and gate-sensitive changes.
+- An alpha reviewer may not approve work it authored or materially implemented.
 - Simpler, isolated tasks may use a more economical agent only when their
   outputs are deterministically verifiable.
 - Parallel work must not overlap writable paths unless the lead explicitly

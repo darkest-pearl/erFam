@@ -7,3 +7,8 @@
 /infra/ @darkest-pearl
 /docs/product/ @darkest-pearl
 /docs/adr/ @darkest-pearl
+/docs/evidence/ @darkest-pearl
+/docs/evidence/baselines.sha256 @darkest-pearl
+/contracts/governance-policy.json @darkest-pearl
+/scripts/verify-bootstrap.sh @darkest-pearl
+/.github/workflows/ @darkest-pearl

@@ -1,0 +1,9 @@
+* @darkest-pearl
+
+/apps/android/ @darkest-pearl
+/apps/admin/ @darkest-pearl
+/services/ @darkest-pearl
+/contracts/ @darkest-pearl
+/infra/ @darkest-pearl
+/docs/product/ @darkest-pearl
+/docs/adr/ @darkest-pearl

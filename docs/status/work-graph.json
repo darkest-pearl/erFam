@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "batch": {"start_utc": "2026-09-10T01:45:52Z", "maximum_seconds": 21600},
+  "input_sha": "e1bce4816ab2e05dfd60313fadae739966843152",
+  "branch": "agent/erfam-reconstruction-20260910",
+  "git_writer": "lead",
+  "tasks": [
+    {"id":"ERF-FND-01-R1","objective":"Freeze semantic catalogue and golden vectors","state":"IN_PROGRESS","owner":"semantic_contracts","prerequisites":["approved PRD/design"],"allowed_paths":["contracts/semantic/**","contracts/fixtures/**","docs/adr/**","docs/change-records/ERF-FND-01-R1.md","docs/evidence/semantic-contracts-r1.md"],"invariants":["one canonical authority","no live carrier","no product features before B2"],"acceptance":["python contracts/semantic/verify.py","independent exact-SHA alpha and QA review"],"reviewer":"alpha + QA","rollback":"revert additive candidate on unmerged branch","evidence":"docs/evidence/semantic-contracts-r1.md"},
+    {"id":"ERF-FND-02-R1","objective":"Reproducible build and trustworthy cross-platform baseline checks","state":"IN_PROGRESS","owner":"lead","prerequisites":["recovered repository"],"allowed_paths":["root build/config files","scripts/verify*","tests/bootstrap/**","docs/status/work-graph.json","docs/status/RESUME.md","docs/evidence/build-*.md"],"invariants":["preserve approved document hashes","inspection error must fail","no safety assertion removed without review"],"acceptance":["python scripts/verify-bootstrap.py","python -m unittest discover -s tests/bootstrap","Gradle wrapper help"],"reviewer":"alpha + QA","rollback":"revert build/verifier candidate","evidence":"docs/evidence/build-r1.md"},
+    {"id":"ERF-QAO-01-TRACE-R1","objective":"Individual requirement and package traceability","state":"IN_PROGRESS","owner":"qa_discovery","prerequisites":["approved source documents"],"allowed_paths":["scripts/extract-requirements.py","docs/status/requirements.json","docs/status/package-catalogue.json","docs/evidence/qa-recovery-20260910.md"],"invariants":["planned tests never count as executed coverage","source paragraphs and tables retained"],"acceptance":["python scripts/extract-requirements.py --check"],"reviewer":"lead + alpha","rollback":"remove additive generated records","evidence":"docs/evidence/qa-recovery-20260910.md"}
+  ],
+  "gates": {"B1":"APPROVED_SOURCE_BASELINE","B2":"PENDING_FRESH_REVIEW","B3":"PENDING","B4":"PENDING","B5":"PENDING","B6":"PENDING","L0":"NOT_AUTHORIZED","L1":"NOT_AUTHORIZED","L2":"NOT_AUTHORIZED","L3":"NOT_AUTHORIZED","L4":"NOT_AUTHORIZED"}
+}
